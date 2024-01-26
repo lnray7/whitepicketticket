@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block head %}
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/homepage.css') }}"/>
+{% endblock %}
+{% block title %}White Picket Ticket{% endblock %}
+
+{% block body %}
+{#    <iframe#}
+{#            id="maps"#}
+{#            width="600"#}
+{#            height="450"#}
+{#            style="border:0"#}
+{#            loading="lazy"#}
+{#            allowfullscreen#}
+{#            referrerpolicy="no-referrer-when-downgrade"#}
+{#            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBdPYyaT-s6ha5WXv8rEBalylzXx2iPEUk#}
+{#        &q=Space+Needle,Seattle+WA">#}
+{#    </iframe>#}
+<div id="header-container">
+    <div id="header">
+        <h1 id="">White Picket Ticket</h1>
+        <div id="header-address-input-group">
+            <input type="text" id="address-input"/>
+            <button id="address-button">Let's Go!</button>
+        </div>
+
+        <div id="google_btn"></div>
+    </div>
+</div>
+    <div id="map"></div>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdPYyaT-s6ha5WXv8rEBalylzXx2iPEUk&callback=initMap&v=weekly"
+      defer
+    ></script> 
+    <script src="{{ url_for('static', filename="script/homepage.js") }}"></script>
+{% endblock %}
